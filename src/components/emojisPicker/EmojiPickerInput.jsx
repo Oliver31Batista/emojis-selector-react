@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
+
+import { useRef } from "react";
 import EmojiPicker from "./EmojiPicker";
 
-const EmojiPickerInput = () => {
-  const refInput = useRef(null);
+import styles from "./emojiPicker.module.scss";
 
+export default function EmojiPickerInput() {
+  const inputRef = useRef(null);
   return (
-    <div>
-      <input ref={refInput} />
-      <EmojiPicker ref={refInput} />
+    <div className={styles.inputContainer}>
+      <input ref={inputRef} />
+      <EmojiPicker ref={inputRef} />
     </div>
   );
-};
-
-export default EmojiPickerInput;
+}
